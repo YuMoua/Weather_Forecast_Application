@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <div id="header" class="text-center text-4xl bg-blue-800 p-4 text-white font-bold">
+            <h1>Weather Dashboard</h1>
+        </div>
+    </header>
+    <div class="flex">
+
+        <div>
+            <div class="row-span-3 mt-4">
+                <form">
+                    <label class="text-4xl font-bold mx-4 w-1/3 ">Search for a City:</label>
+                    <input type="text" placeholder="Type City Name Here"
+                        class="border-black border-2 rounded-lg px-2 w-80 h-12 flex items-center mx-4 mt-2 text-xl">
+                    <button id="citySearchBarBTN" type="submit"
+                        class="bg-blue-500 w-80 h-12 rounded-xl mx-4 mt-2 text-white text-xl">Search</button>
+                    </form>
+            </div>
+            <div>
+                <hr class="w-80 h-1 mx-4 my-4 bg-gray-900">
+            </div>
+            <div id="mainEightCities" class="row-span-8">
+                <div>
+                    <button id="atlantaWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">Atlanta</button>
+
+                </div>
+                <div>
+                    <button id="denverWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">Denver</button>
+
+                </div>
+                <div>
+                    <button id="seattleWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">Seattle</button>
+
+                </div>
+                <div>
+                    <button id="sanFranciscoWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">San
+                        Francisco</button>
+
+                </div>
+                <div>
+                    <button id="orlandoWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">Orlando</button>
+
+                </div>
+                <div>
+                    <button id="newYorkWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">New
+                        York</button>
+
+                </div>
+                <div>
+                    <button id="chicagoWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">Chicago</button>
+
+                </div>
+                <div>
+                    <button id="austinWeatherBTN"
+                        class="text-center bg-gray-300 border-2 border-black h-12 w-80 mx-4 my-2 rounded-lg">Austin</button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row-span-2 flex-1">
+            <div id="presentDayWeather" class="border-2 border-black w-[93rem] h-52 mx-2 my-8">
+                <div class="flex text-4xl font-semibold mx-4">
+                    <h2 id="selectedCity">TestCity</h2>
+                    <p id="firstDate" class="mx-4">Date1</p>
+                </div>
+                <div class="text-lg mx-4 my-4">
+                    <p class="my-4">Temp: </p>
+                    <p class="my-4">Wind: </p>
+                    <p class="my-4">Humidity: </p>
+                </div>
+
+            </div>
+            <div class="mb-6 ml-2 text-3xl font-bold">
+                <h2>5-Day Forcast:</h2>
+            </div>
+            <div class="columns-5">
+                <div id="secondDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div id="secondDate" class="text-white text-2xl mx-2">
+                        <p>Date2</p>
+                        <div class="text-lg mx-2 my-4">
+                            <p class="my-4">Temp: </p>
+                            <p class="my-4">Wind: </p>
+                            <p class="my-4">Humidity: </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="thirdDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div id="thirdDate" class="text-white text-2xl mx-2">
+                        <p>Date3</p>
+                        <div class="text-lg mx-2 my-4">
+                            <p class="my-4">Temp: </p>
+                            <p class="my-4">Wind: </p>
+                            <p class="my-4">Humidity: </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="fourthDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div id="fourthDate" class="text-white text-2xl mx-2">
+                        <p>Date4</p>
+                        <div class="text-lg mx-2 my-4">
+                            <p class="my-4">Temp: </p>
+                            <p class="my-4">Wind: </p>
+                            <p class="my-4">Humidity: </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="fifthDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div id="fifthDate" class="text-white text-2xl mx-2">
+                        <p>Date5</p>
+                        <div class="text-lg mx-2 my-4">
+                            <p class="my-4">Temp: </p>
+                            <p class="my-4">Wind: </p>
+                            <p class="my-4">Humidity: </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="sixthDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div id="sixthDate" class="text-white text-2xl mx-2">
+                        <p>Date6</p>
+                        <div class="text-lg mx-2 my-4">
+                            <p class="my-4">Temp: </p>
+                            <p class="my-4">Wind: </p>
+                            <p class="my-4">Humidity: </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
