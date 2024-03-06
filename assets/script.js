@@ -28,10 +28,21 @@ let fifthDay = document.getElementById('fifthDay');
 let sixthDay = document.getElementById('sixthDay');
 
 // Weather API KEY
-let apiID = 'dddef569111da5d78cc08aff79646497';
+let apiKey = 'dddef569111da5d78cc08aff79646497';
 
 // Weather Forcast API to find weather
-let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + lattitude + '&lon=' + longitude + '&appid=' + apiID;
+let weatherAPIURL = 'http//api.openweathermap.org/data/2.5/forecast?lat=' + lattitude + '&lon=' + longitude + '&appid=' + apiKey;
+
+let requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+
+}
+
+function weatherGet(weatherAPIURL) {
+    fetch(weatherAPIURL, requestOptions)
+    .then(response => response.json())
+}
 // Geocoding API to find coordinates
 let geocodingAPI = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiID;
 
