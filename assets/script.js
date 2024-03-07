@@ -67,22 +67,52 @@ function weatherGet(cityName) {
     let weatherAPIURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=' + apiKey + '&units=imperial';
     fetch(weatherAPIURL)
     .then(response => response.json())
+    // .then((data) => {
+    //     console.log(data)
+    //     console.log(data.list)
+    //     console.log(data.list[0])
+    //     console.log(data.list[0].main)
+    //     console.log(data.list[0].main.temp + ' Degrees fahrenheit')
+    //     console.log(data.list[0].wind.speed + ' MPH')
+    //     console.log('Humidity: ' + data.list[0].main.humidity)
+    // })
     .then((data) => {
-        console.log(data)
-        console.log(data.list)
-        console.log(data.list[0])
-        console.log(data.list[0].main)
-        console.log(data.list[0].main.temp + ' Degrees fahrenheit')
-        console.log(data.list[0].wind.speed + ' MPH')
-        console.log('Humidity: ' + data.list[0].main.humidity)
-    })
-    .then((data) => {
-        let temp = data.list[0].main.temp + ' Degrees fahrenheit';
-        d1Temp.textContent = temp;
-        let windSpeed = data.list[0].wind.speed + ' MPH';
-        d1WindSpeed.textContent = windSpeed;
-        let humidity = 'Humidity: ' + data.list[0].main.humidity;
-        d1Humidity.textContent = humidity;
+        // ---- Day 1 ----
+        let temp1 = data.list[0].main.temp + ' Degrees';
+        d1Temp.innerText = temp1;
+        let windSpeed1 = data.list[0].wind.speed + ' MPH';
+        d1WindSpeed.innerText = windSpeed1;
+        let humidity1 = data.list[0].main.humidity + '%';
+        d1Humidity.innerText = humidity1;
+        // ---- Day 2 ----
+        let temp2 = data.list[8].main.temp + ' Degrees';
+        d2Temp.innerText = temp2;
+        let windSpeed2 = data.list[8].wind.speed + ' MPH';
+        d2WindSpeed.innerText = windSpeed2;
+        let humidity2 = data.list[8].main.humidity + '%';
+        d2Humidity.innerText = humidity2;
+        // ---- Day 3 ----
+        let temp3 = data.list[16].main.temp + ' Degrees';
+        d3Temp.innerText = temp3;
+        let windSpeed3 = data.list[16].wind.speed + ' MPH';
+        d3WindSpeed.innerText = windSpeed3;
+        let humidity3 = data.list[16].main.humidity + '%';
+        d3Humidity.innerText = humidity3;
+        // ---- Day 4 ----
+        let temp4 = data.list[24].main.temp + ' Degrees';
+        d4Temp.innerText = temp4;
+        let windSpeed4 = data.list[24].wind.speed + ' MPH';
+        d4WindSpeed.innerText = windSpeed4;
+        let humidity4 = data.list[24].main.humidity + '%';
+        d4Humidity.innerText = humidity4;
+        // ---- Day 5 ----
+        let temp5 = data.list[32].main.temp + ' Degrees';
+        d5Temp.innerText = temp5;
+        let windSpeed5 = data.list[32].wind.speed + ' MPH';
+        d5WindSpeed.innerText = windSpeed5;
+        let humidity5 = data.list[32].main.humidity + '%';
+        d5Humidity.innerText = humidity5;
+        
     })
     .catch(error => console.log('Error', error))
     
