@@ -28,17 +28,39 @@ let fourthDay = document.getElementById('fourthDay');
 let fifthDay = document.getElementById('fifthDay');
 let sixthDay = document.getElementById('sixthDay');
 
+// Day 1 Weather Elements
+let d1Temp = document.getElementById('d1Temp');
+let d1WindSpeed = document.getElementById('d1WindSpeed');
+let d1Humidity = document.getElementById('d1Humidity');
+
+// Day 2 Weather Elements
+let d2Temp = document.getElementById('d2Temp');
+let d2WindSpeed = document.getElementById('d2WindSpeed');
+let d2Humidity = document.getElementById('d2Humidity');
+// Day 3 Weather Elements
+let d3Temp = document.getElementById('d3Temp');
+let d3WindSpeed = document.getElementById('d3WindSpeed');
+let d3Humidity = document.getElementById('d3Humidity');
+// Day 4 Weather Elements
+let d4Temp = document.getElementById('d4Temp');
+let d4WindSpeed = document.getElementById('d4WindSpeed');
+let d4Humidity = document.getElementById('d4Humidity');
+// Day 5 Weather Elements
+let d5Temp = document.getElementById('d5Temp');
+let d5WindSpeed = document.getElementById('d5WindSpeed');
+let d5Humidity = document.getElementById('d5Humidity');
+
 // Weather API KEY
 let apiKey = 'dddef569111da5d78cc08aff79646497';
 
 
 // Weather Forcast API to find weather
 
-let requestOptions = {
-    method: 'GET',
-    mode: 'no-cors',
-    redirect: 'follow'
-}
+// let requestOptions = {
+//     method: 'GET',
+//     mode: 'no-cors',
+//     redirect: 'follow'
+// }
 
 function weatherGet(cityName) {
     
@@ -50,6 +72,17 @@ function weatherGet(cityName) {
         console.log(data.list)
         console.log(data.list[0])
         console.log(data.list[0].main)
+        console.log(data.list[0].main.temp + ' Degrees fahrenheit')
+        console.log(data.list[0].wind.speed + ' MPH')
+        console.log('Humidity: ' + data.list[0].main.humidity)
+    })
+    .then((data) => {
+        let temp = data.list[0].main.temp + ' Degrees fahrenheit';
+        d1Temp.textContent = temp;
+        let windSpeed = data.list[0].wind.speed + ' MPH';
+        d1WindSpeed.textContent = windSpeed;
+        let humidity = 'Humidity: ' + data.list[0].main.humidity;
+        d1Humidity.textContent = humidity;
     })
     .catch(error => console.log('Error', error))
     
@@ -63,157 +96,60 @@ searchForm.addEventListener('submit', function(event) {
     console.log(cityName);
     weatherGet(cityName)
 
-
 });
 
-atlantaWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '33.7488';
-    let longitude = '84.3877';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
+// atlantaWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'atlanta';
+//     weatherGet(cityName)
+// });
 
-    weatherGet()
-});
+// denverWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'denver';
+//     weatherGet(cityName)
+// });
 
-denverWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '39.7392';
-    let longitude = '104.9903';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
+// seattleWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'seattle';
+//     weatherGet(cityName)
+// });
 
-    weatherGet()
-});
+// sanFranciscoWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'san+francisco';
+//     weatherGet(cityName)
+// });
 
-seattleWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '47.6061';
-    let longitude = '122.3328';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
+// orlandoWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'orlando';
+//     weatherGet(cityName)
+// });
 
-    weatherGet()
-});
+// newYorkWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'new+york';
+//     weatherGet(cityName)
+// });
 
-sanFranciscoWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '37.7749';
-    let longitude = '122.4194';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
+// chicagoWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'chicago';
+//     weatherGet(cityName)
+// });
 
-    weatherGet()
-});
-
-orlandoWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '28.5384';
-    let longitude = '81.3789';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
-
-    weatherGet()
-});
-
-newYorkWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '40.7128';
-    let longitude = '74.0060';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
-
-    weatherGet()
-});
-
-chicagoWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '41.8781';
-    let longitude = '87.6298';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
-
-    weatherGet()
-});
-
-austinWeatherBTN.addEventListener('click', function () {
-    // Need to add function to search city weather in the API
-    let latitude = '30.2672';
-    let longitude = '97.7431';
-    function weatherGet(weatherAPIURL, response) {
-        let weatherAPIURL = 'https//api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey;
-        let requestOptions = {
-            'method': 'GET',
-            'mode': 'no-cors',
-            'redirect': 'follow'
-        }
-        fetch(weatherAPIURL, requestOptions)
-            .then(response => response.json())
-        console.log(response);
-    };
-
-    weatherGet()
-});
+// austinWeatherBTN.addEventListener('click', function(event) {
+//     // Need to add function to search city weather in the API
+//     event.preventDefault();
+//     let cityName = 'austin';
+//     weatherGet(cityName)
+// });
