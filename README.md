@@ -6,3 +6,4 @@ To use this, you simply need to type in the city name of the location and press 
 The application will then fetch the API and use the needed data onto the page. 
 
 This was developed using Javascript, HTML, and by me with help from TA's. 
+![BootCamp_Weather_Application_Pic](https://github.com/YuMoua/Weather_Forecast_Application/assets/153407360/756e9ee4-08ad-41c1-9d36-4915c3660a0a)
