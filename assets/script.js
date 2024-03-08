@@ -1,12 +1,18 @@
+// let dayjs = require('dayjs');
+
+
 // Main City Weather Buttons Element
-let atlantaWeatherBTN = document.getElementById('AtlantaWeather');
-let denverWeatherBTN = document.getElementById('denverWeather');
-let seattleWeatherBTN = document.getElementById('seattleWeather');
-let sanFranciscoWeatherBTN = document.getElementById('sanFranciscoWeather');
-let orlandoWeatherBTN = document.getElementById('orlandoWeather');
-let newYorkWeatherBTN = document.getElementById('newYorkWeather');
-let chicagoWeatherBTN = document.getElementById('chicagoWeather');
-let austinWeatherBTN = document.getElementById('austinWeather');
+// let atlantaWeatherBTN = document.getElementById('AtlantaWeather');
+// let denverWeatherBTN = document.getElementById('denverWeather');
+// let seattleWeatherBTN = document.getElementById('seattleWeather');
+// let sanFranciscoWeatherBTN = document.getElementById('sanFranciscoWeather');
+// let orlandoWeatherBTN = document.getElementById('orlandoWeather');
+// let newYorkWeatherBTN = document.getElementById('newYorkWeather');
+// let chicagoWeatherBTN = document.getElementById('chicagoWeather');
+// let austinWeatherBTN = document.getElementById('austinWeather');
+
+// Searched City Name Typed
+let selectedCity = document.getElementById('selectedCity');
 
 // searchBar typed city name element
 let cityNameSearched = document.getElementById('cityNameSearched');
@@ -21,12 +27,13 @@ let citySearchBarBTN = document.getElementById('citySearchBarBTN');
 let presentDayWeather = document.getElementById('presentDayWeather');
 
 
-// Next five day's Weather Elements
-let secondDay = document.getElementById('secondDay');
-let thirdDay = document.getElementById('thirdDay');
-let fourthDay = document.getElementById('fourthDay');
-let fifthDay = document.getElementById('fifthDay');
-let sixthDay = document.getElementById('sixthDay');
+// Next five day's Date Elements
+let firstDate = document.getElementById('firstDate');
+let secondDate = document.getElementById('secondDate');
+let thirdDate = document.getElementById('thirdDate');
+let fourthDate = document.getElementById('fourthDate');
+let fifthDate = document.getElementById('fifthDate');
+let sixthDate = document.getElementById('sixthDate');
 
 // Day 1 Weather Elements
 let d1Temp = document.getElementById('d1Temp');
@@ -77,6 +84,10 @@ function weatherGet(cityName) {
     //     console.log('Humidity: ' + data.list[0].main.humidity)
     // })
     .then((data) => {
+        // CityName on HTML Page Code
+        selectedCity.textContent = cityName;
+        let today = dayjs().format('MM-DD');
+        firstDate.textContent = today;
         // ---- Day 1 ----
         let temp1 = data.list[0].main.temp + ' Degrees';
         d1Temp.innerText = temp1;
@@ -85,6 +96,9 @@ function weatherGet(cityName) {
         let humidity1 = data.list[0].main.humidity + '%';
         d1Humidity.innerText = humidity1;
         // ---- Day 2 ----
+        let day2 = dayjs().add(1, 'day').format('MM-DD');
+        secondDate.textContent = day2;
+
         let temp2 = data.list[8].main.temp + ' Degrees';
         d2Temp.innerText = temp2;
         let windSpeed2 = data.list[8].wind.speed + ' MPH';
@@ -92,6 +106,10 @@ function weatherGet(cityName) {
         let humidity2 = data.list[8].main.humidity + '%';
         d2Humidity.innerText = humidity2;
         // ---- Day 3 ----
+        let day3 = dayjs().add(2, 'day').format('MM-DD');
+
+        thirdDate.textContent = day3;
+
         let temp3 = data.list[16].main.temp + ' Degrees';
         d3Temp.innerText = temp3;
         let windSpeed3 = data.list[16].wind.speed + ' MPH';
@@ -99,6 +117,10 @@ function weatherGet(cityName) {
         let humidity3 = data.list[16].main.humidity + '%';
         d3Humidity.innerText = humidity3;
         // ---- Day 4 ----
+        let day4 = dayjs().add(3, 'day').format('MM-DD');
+
+        fourthDate.textContent = day4;
+
         let temp4 = data.list[24].main.temp + ' Degrees';
         d4Temp.innerText = temp4;
         let windSpeed4 = data.list[24].wind.speed + ' MPH';
@@ -106,6 +128,10 @@ function weatherGet(cityName) {
         let humidity4 = data.list[24].main.humidity + '%';
         d4Humidity.innerText = humidity4;
         // ---- Day 5 ----
+        let day5 = dayjs().add(4, 'day').format('MM-DD');
+
+        fifthDate.textContent = day5;
+
         let temp5 = data.list[32].main.temp + ' Degrees';
         d5Temp.innerText = temp5;
         let windSpeed5 = data.list[32].wind.speed + ' MPH';

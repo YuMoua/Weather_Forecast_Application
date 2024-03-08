@@ -81,8 +81,8 @@
         <div class="row-span-2 flex-1">
             <div id="presentDayWeather" class="border-2 border-black w-[93rem] h-52 mx-2 my-8">
                 <div class="flex text-4xl font-semibold mx-4">
-                    <h2 id="selectedCity">TestCity</h2>
-                    <p id="firstDate" class="mx-4">Date1</p>
+                    <h2 id="selectedCity"></h2>
+                    <p id="firstDate" class="mx-4"></p>
                 </div>
                 <div class="text-lg mx-4 inline-grid">
                     <div class="inline-flex my-4">
@@ -104,9 +104,9 @@
                 <h2>5-Day Forcast:</h2>
             </div>
             <div class="columns-4">
-                <div id="secondDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
-                    <div id="secondDate" class="text-white text-2xl mx-2">
-                        <p>Date2</p>
+                <div class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div class="text-white text-2xl mx-2">
+                        <p id="secondDate"></p>
                         <div class="text-lg mx-2 inline-grid">
                             <div class="inline-flex my-4">
                                 <p>Temp: </p>
@@ -124,9 +124,9 @@
                     </div>
 
                 </div>
-                <div id="thirdDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
-                    <div id="thirdDate" class="text-white text-2xl mx-2">
-                        <p>Date3</p>
+                <div class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div class="text-white text-2xl mx-2">
+                        <p id="thirdDate"></p>
                         <div class="text-lg mx-2 inline-grid">
                             <div class="inline-flex my-4">
                                 <p>Temp: </p>
@@ -145,9 +145,9 @@
                     </div>
 
                 </div>
-                <div id="fourthDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
-                    <div id="fourthDate" class="text-white text-2xl mx-2">
-                        <p>Date4</p>
+                <div class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div class="text-white text-2xl mx-2">
+                        <p id="fourthDate"></p>
                         <div class="text-lg mx-2 inline-grid">
                             <div class="inline-flex my-4">
                                 <p>Temp: </p>
@@ -166,9 +166,9 @@
                     </div>
 
                 </div>
-                <div id="fifthDay" class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
-                    <div id="fifthDate" class="text-white text-2xl mx-2">
-                        <p>Date5</p>
+                <div class="border-black border-2 bg-gray-700 h-64 w-56 mx-2">
+                    <div class="text-white text-2xl mx-2">
+                        <p id="fifthDate"></p>
                         <div class="text-lg mx-2 inline-grid">
                             <div class="inline-flex my-4">
                                 <p>Temp: </p>
@@ -214,7 +214,9 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
     <script src="./assets/script.js"></script>
+
 
 
 </body>
